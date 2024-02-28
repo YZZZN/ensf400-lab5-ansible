@@ -9,7 +9,7 @@ services:
     environment:
       - SSH_ENABLE_ROOT=true
     volumes: 
-      - secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - /workspaces/ensf400-lab5-ansible/secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports:
       - "3000:3000" #web
       - "2223:2223" #SSH
@@ -21,7 +21,7 @@ services:
     environment:
       - SSH_ENABLE_ROOT=true
     volumes: 
-      - secrets/id_rsa_container.pub:/root/.ssh/authorized_keys      
+      - /workspaces/ensf400-lab5-ansible/secrets/id_rsa_container.pub:/root/.ssh/authorized_keys      
     ports:
       - "3001:3000" #web
       - "2224:2224" #SSH
@@ -33,7 +33,9 @@ services:
     environment:
       - SSH_ENABLE_ROOT=true
     volumes: 
-      - secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
+      - /workspaces/ensf400-lab5-ansible/secrets/id_rsa_container.pub:/root/.ssh/authorized_keys
     ports: 
-      - "3002:2225" #web
+      - "3002:3000" #web
       - "2225:2225" #SSH
+
+    
